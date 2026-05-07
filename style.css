@@ -1,0 +1,68 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Pink-400: hsl(0, 36%, 70%);
+--Red-500: hsl(0, 93%, 68%);
+--Gray-900: hsl(0, 6%, 24%);
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+}
+.wrapper{
+    display: flex;
+    height: 100vh;
+}
+
+.left-column{
+   flex-grow: 1;
+    background: linear-gradient( 135deg,  hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+   
+    align-items: flex-start;
+    
+}
+
+.right-column{
+    flex-grow: 2;
+}
+
+.right-column img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+
+h1{
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--Pink-400);
+    font-size: 4rem;
+    margin-top: auto;
+    margin-bottom: 2rem;
+}
+h1 span{
+    font-weight: 500;
+    color: var(--Gray-900);
+    display: block;
+}
+
+p{
+    color: var(--Pink-400);
+    margin-bottom: 2rem;
+}
+.error{
+    color: red;
+    display: none;
+}
+
+.error.active{
+    display: block;
+}
