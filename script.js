@@ -1,12 +1,14 @@
-const btn = document.querySelector('button')
-const error = document.querySelector('.error')
+const emailInput = document.querySelector('#email')
+const form = document.querySelector('form')
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-btn.addEventListener('click', (e)=>{
+form.addEventListener('submit', (e)=>{
     e.preventDefault()
-    const email = document.querySelector('#email').value
-   if(!email.includes('@'))
-    error.classList.add('active')
+    const email = emailInput.value.trim()
+    
+   if(email === '' || !emailRegex.test(email))
+    form.classList.add('error')
    else
-    error.classList.remove('active')
+    form.classList.remove('error')
         
 })

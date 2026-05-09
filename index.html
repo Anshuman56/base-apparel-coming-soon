@@ -19,13 +19,16 @@
   </style>
 </head>
 <body>
+  <header>
+
+    <img src="images/logo.svg" alt="Base Apparel">
+  </header>
   <div class="wrapper">
 
     <div class="left-column">
-      <img src="images/logo.svg" alt="logo of our compnay">
       <h1>
     
-        We're <span>coming </br>soon</span>
+        We're <span>coming soon</span>
       </h1>
     <p>
       Hello fellow shoppers! We're currently building our new fashion store. 
@@ -35,12 +38,16 @@
     <form action="">
   
       <input type="text" name="email" id="email" placeholder="Email Address">
-      <button><img src="images/icon-arrow.svg" alt=""></button>
+      <img src="images/icon-error.svg" alt="" class="error-icon">
+    <button ><img src="images/icon-arrow.svg" alt=""></button>
     </form>
-    <p class="error">Please provide a valid email</p>
+    <p class="error-message">Please provide a valid email</p>
     </div>
     <div class="right-column">
-      <img src="images/hero-desktop.jpg" alt="a big photo of a butiful woman">
+      <picture>
+        <source media="(max-width: 700px)" srcset="images/hero-mobile.jpg">
+        <img src="images/hero-desktop.jpg" alt="a big photo of a beautiful woman">
+      </picture>
     </div>
 
   </div>

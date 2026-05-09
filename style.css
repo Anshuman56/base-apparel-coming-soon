@@ -18,25 +18,65 @@ body {
 }
 
 .left-column{
-   flex-grow: 1;
-    background: linear-gradient( 135deg,  hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-    padding: 2rem 4rem;
+   flex: 2;
+   
+    padding: 2rem 8rem;
     display: flex;
     flex-direction: column;
-   
+    justify-content: center;
     align-items: flex-start;
-    
+    background:  url(images/bg-pattern-desktop.svg) no-repeat,
+    linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    background-position: left;
 }
 
 .right-column{
-    flex-grow: 2;
+    flex: 3;
 }
 
 .right-column img{
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    object-position: top;
 }
+
+form{
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+   
+}
+input{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    padding-right: 6rem;
+    border: 1px solid var(--Pink-400);
+    border-radius: 50px;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--Gray-900);
+}
+input::placeholder{
+    color: var(--Pink-400);
+}
+button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 6rem;
+    border: none;
+    border-radius: 50px ;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+ button:hover {
+    background: linear-gradient(135deg, hsl(0, 80%, 90%), hsl(0, 74%, 80%));
+    box-shadow: -10px 12px 20px hsla(0, 36%, 70%, 0.5);
+  }
 
 
 
@@ -45,7 +85,7 @@ h1{
     font-weight: 300;
     color: var(--Pink-400);
     font-size: 4rem;
-    margin-top: auto;
+   
     margin-bottom: 2rem;
 }
 h1 span{
@@ -58,11 +98,61 @@ p{
     color: var(--Pink-400);
     margin-bottom: 2rem;
 }
-.error{
-    color: red;
+
+.error-icon{
+    position: absolute;
+    right: 7rem;
+    top: 50%;
+    transform: translateY(-50%);
     display: none;
 }
+.error-message{
+    color: var(--Red-500);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    padding-left: 1.5rem ;
+    display: none;
+}
+  form.error input {
+    border-color: var(--Red-500);
+    border-width: 2px;
+  }
 
-.error.active{
+  form.error ~ .error-message {
     display: block;
+  }
+
+  form.error .error-icon {
+    display: block;
+  }
+header{
+    padding: 4rem 8rem;
+     position: absolute;
+    top: 0;
+    left: 0;
+}
+.error-message p{
+    margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+     header {
+      position: static;
+      padding: 2rem 4rem;
+    }
+    .wrapper{
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .right-column img{
+        height: 300px;
+    }
+    .left-column{
+        align-items: center;
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+    h1{
+        font-size: 2.75rem;
+    }
 }
